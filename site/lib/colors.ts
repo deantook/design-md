@@ -40,7 +40,21 @@ function hexToRgb(hex: string): [number, number, number] {
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
 }
 
-function parseRgb(s: string): [number, number, number] {
+function hslToRgb(h: number, s: number, l: number): [number, number, number] {
+  s /= 100
+  l /= 100
+  const k = (n: number) => (n + h / 30) % 12
+  const a = s * Math.min(l, 1 - l)
+  const f = (n: number) => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)))
+  return [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)]
+}
+
+function parseColor(s: string): [number, number, number] {
+  if (s.startsWith('hsl')) {
+    const m = s.match(/(\d+(\.\d+)?)/g)
+    if (!m) return [0, 0, 0]
+    return hslToRgb(Number(m[0]), Number(m[1]), Number(m[2]))
+  }
   const m = s.match(/(\d+(\.\d+)?)/g)
   if (!m) return [0, 0, 0]
   return [Number(m[0]), Number(m[1]), Number(m[2])]
@@ -49,7 +63,7 @@ function parseRgb(s: string): [number, number, number] {
 export function luminanceOf(color: string): number {
   let [r, g, b] = [0, 0, 0]
   if (color.startsWith('#')) [r, g, b] = hexToRgb(color)
-  else [r, g, b] = parseRgb(color)
+  else [r, g, b] = parseColor(color)
   const toLin = (c: number) => {
     const cs = c / 255
     return cs <= 0.03928 ? cs / 12.92 : Math.pow((cs + 0.055) / 1.055, 2.4)

@@ -54,4 +54,8 @@ describe('luminanceOf + sortByLuminance', () => {
     const sorted = sortByLuminance(['#ededed', '#000000', '#1c1c1c'])
     expect(sorted).toEqual(['#000000', '#1c1c1c', '#ededed'])
   })
+  it('handles hsl luminance', () => {
+    expect(luminanceOf('hsl(0, 0%, 50%)')).toBeGreaterThan(luminanceOf('#000000'))
+    expect(luminanceOf('hsl(0, 0%, 50%)')).toBeLessThan(luminanceOf('#ffffff'))
+  })
 })
