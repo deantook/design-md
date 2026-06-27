@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:index": "tsx scripts/build-index.ts",
+    "prebuild": "npm run build:index"
   },
   "dependencies": {
     "next": "^15.0.0",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
