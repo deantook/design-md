@@ -6,14 +6,24 @@ import { matchEntries } from '@/lib/search'
 import { CANONICAL_TAGS } from '@/config'
 import type { SearchEntry } from '@/lib/types'
 
-interface Props { entries: SearchEntry[] }
-
 const TABS = Object.keys(CANONICAL_TAGS)
 
-export function Leaderboard({ entries }: Props) {
+export function Leaderboard() {
+  const [entries, setEntries] = useState<SearchEntry[]>([])
+  const [loading, setLoading] = useState(true)
   const [query, setQuery] = useState('')
   const [tab, setTab] = useState('ALL')
   const [activeIdx, setActiveIdx] = useState(0)
+
+  useEffect(() => {
+    fetch('/search-index.json')
+      .then((r) => r.json())
+      .then((data: SearchEntry[]) => {
+        setEntries(data)
+        setLoading(false)
+      })
+      .catch(() => setLoading(false))
+  }, [])
 
   const tabFiltered = useMemo(() => {
     const tags = CANONICAL_TAGS[tab] || []
@@ -29,6 +39,15 @@ export function Leaderboard({ entries }: Props) {
     if (matched.length === 0) return
     const next = (i + matched.length) % matched.length
     setActiveIdx(next)
+  }
+
+  if (loading) {
+    return (
+      <section className="py-8">
+        <span className="font-mono text-sm font-medium uppercase text-foreground">Sites Leaderboard</span>
+        <p className="py-8 text-center font-mono text-sm text-muted-fg">Loading…</p>
+      </section>
+    )
   }
 
   return (
@@ -57,7 +76,13 @@ export function Leaderboard({ entries }: Props) {
       </div>
       <div className="mt-2">
         {matched.length === 0 ? (
-          <p className="py-8 text-center font-mono text-sm text-muted-fg">No matches found.</p>
+          <p className="py-8 text-center font-mono text-sm text-muted-fg">
+            {entries.length === 0
+              ? 'No design.md in directory yet.'
+              : query.trim()
+                ? 'No matches found.'
+                : 'No sites in this category.'}
+          </p>
         ) : (
           matched.map((e, i) => (
             <LeaderboardRow key={e.domain} entry={e} index={i} selected={i === activeIdx} />
