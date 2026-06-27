@@ -1,5 +1,14 @@
 ---
 version: alpha
+tags:
+  - Developer
+  - Minimalist
+  - Dark Theme
+  - Directory
+  - Data-driven
+  - Terminal Aesthetic
+  - No Brand Color
+  - Open Source
 name: skills-sh-design-analysis
 description: An "open agent skills directory" landing page built by Vercel. The system anchors on a pure black canvas (#000000) — fully dark, no light theme toggle. The palette is strictly achromatic: white-ish foreground, dark-gray border, mid-gray secondary text. Zero brand color, zero accent color, zero gradient. The typographic voice is carried by three typefaces working together: Geist handles all body, headings, and navigation in a humanist sans voice; Geist Mono carries every eyebrow, terminal command, search input, tab, and footer column heading in a monospaced voice; Fira Mono is used exclusively for the central ASCII art wordmark "SKILLS" — a figlet-style block character banner that serves as the page's only "image" hero. All eyebrows are mono / uppercase / 14px, manufacturing a "terminal / CLI / developer tool" voice. The visual main act is the leaderboard table: rank, skill name, 8-week activity sparkline, install count — purely data-driven, zero marketing illustration. Partner agent logos are rendered in grayscale by default and recover their brand color on hover.
 

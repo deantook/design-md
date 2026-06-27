@@ -55,8 +55,9 @@ These rules are what make the design.md usable by agent-coding — break them an
 3. **Components are separate entries, never merged** — variants (`-active`, `-disabled`, `-sm`, `-secondary`, `-on-dark`) each get their own key under `components:`.
 4. **Record Default and Active/Pressed/Focused only — never hover.** Hover is intentionally out of scope (per reference files).
 5. **Frontmatter `description` field** is a single dense paragraph (2–5 sentences) that captures the system's character: canvas tone, brand-color voltage, typographic voice, signature shape, and the system's defining contrast against common SaaS defaults.
-6. **Hex values are uppercase where ambiguous; use the exact on-site value.** For derived/oklab values, use `color-mix(in oklab, #XXXXXX X%, transparent)` form (see `cursor.com.design.zh.md`).
-7. **`{component.X}` blocks in frontmatter** list backgroundColor, textColor, typography, rounded, padding, height, border as applicable — same shape as the references.
+6. **Frontmatter `tags` field** is a YAML list of 4–8 short labels summarizing the site's audience, style, and page type — derived from the actual content and visual character, not generic. Place it immediately after `version:` and before `name:`. Tags match the file's language: Chinese labels for `.zh.md` (e.g. `开发者`, `极简风格`, `产品页`, `深色主题`, `编辑型`, `胶囊按钮`, `数据驱动`, `终端美学`), English labels for `.en.md` (e.g. `Developer`, `Minimalist`, `Product Page`, `Dark Theme`, `Editorial`, `Pill Buttons`, `Data-driven`, `Terminal Aesthetic`). Cover a mix of dimensions: audience (who it's for), page type (landing / product / directory / docs), visual style (minimalist / editorial / warm / dark), signature mechanic (capsule buttons / serif display / ASCII wordmark / data-driven table). Keep each tag to 1–4 words; never use throwaway tags like `dev` / `cool` / `nice`.
+7. **Hex values are uppercase where ambiguous; use the exact on-site value.** For derived/oklab values, use `color-mix(in oklab, #XXXXXX X%, transparent)` form (see `cursor.com.design.zh.md`).
+8. **`{component.X}` blocks in frontmatter** list backgroundColor, textColor, typography, rounded, padding, height, border as applicable — same shape as the references.
 
 ## Workflow
 
@@ -108,6 +109,7 @@ Map extracted data to the frontmatter token blocks:
 - `rounded:` — provide `xs sm md lg xl pill full` even if some are unused (mark usage in the table).
 - `spacing:` — derive the site's base unit (4px / 8px / 10px) and name tokens accordingly.
 - `components:` — one entry per distinct component variant. Cross-reference the snapshot for names.
+- `tags:` — derive 4–8 labels from the site's content + visual character (audience, page type, visual style, signature mechanic). Match the file's language. See Token rule 6.
 
 ### Phase 4 — Write the two files
 

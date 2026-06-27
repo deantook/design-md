@@ -1,5 +1,14 @@
 ---
 version: alpha
+tags:
+  - 开发者
+  - AI 编程
+  - 产品页
+  - 暖色调
+  - 编辑型
+  - 浅色主题
+  - 胶囊按钮
+  - 工程美学
 name: Cursor-design-analysis
 description: 一个以"暖奶油画布 + 墨黑按钮 + 电光橙"为三原色的编辑型 AI 编程工具落地页。系统以带暖调的米色画布为底，配深暖墨色文本与近黑按钮；品牌电压来自一抹电光橙（#f54e00），仅用于强调链接、focus 环、产品 chrome 中的活动指示，刻意稀缺。字体声线全程使用单一人文无衬线体 "CursorGothic"——h1、h2、h3 与正文、按钮、导航共用同族，weight 几乎全为 400，靠负字距与字号节奏而非粗细制造层级；代码区使用 "berkeleyMono"。按钮一律为胶囊形（pill），与 Anthropic 的 8px 圆角形成鲜明对比。整体不切换到深色 surface：连 IDE/产品 mockup 都以"product-chrome"奶油色 (#f2f1ed) 渲染，footer 也保持奶油色，整页几乎无深色 band。
 

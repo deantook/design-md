@@ -1,5 +1,12 @@
 ---
 version: alpha
+tags:
+  - <标签1>
+  - <标签2>
+  - <标签3>
+  - <标签4>
+  - <标签5>
+  - <标签6>
 name: <domain>-design-analysis
 description: <一段 2–5 句的密集描述：画布色调、品牌电压所在、字体声线、签名形状、与同类 SaaS 默认值的关键反差。中文，参考 cursor.com.design.zh.md 的 description 写法。>
 

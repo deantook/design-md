@@ -1,5 +1,12 @@
 ---
 version: alpha
+tags:
+  - <tag1>
+  - <tag2>
+  - <tag3>
+  - <tag4>
+  - <tag5>
+  - <tag6>
 name: <domain>-design-analysis
 description: <A 2–5 sentence dense paragraph: canvas tone, brand voltage source, typographic voice, signature shape, the system's defining contrast against common SaaS defaults. English, match claude.com.design.en.md voice.>
 

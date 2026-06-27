@@ -1,5 +1,14 @@
 ---
 version: alpha
+tags:
+  - 开发者
+  - 极简风格
+  - 深色主题
+  - 目录页
+  - 数据驱动
+  - 终端美学
+  - 无品牌色
+  - 开源
 name: skills-sh-design-analysis
 description: 一个由 Vercel 打造的"开放 Agent 技能目录"落地页。系统锚定在纯黑画布（#000000）之上，全程深色、无浅色主题切换；色板严格无彩色（achromatic）——前景白、边界深灰、副文本中灰，零品牌色、零强调色、零渐变。字体声线由三套字体共同构成：Geist 担任全部正文与标题的人文无衬线声线；Geist Mono 担任所有 eyebrow、终端命令、搜索框、tab、footer 列标题的等宽声线；Fira Mono 仅用于 hero 中央的 ASCII 艺术字 "SKILLS"——一套 figlet 风格的块状字符，是整页唯一的"图像"主视觉。所有 eyebrow 一律 mono / uppercase / 14px，制造"终端 / CLI / 开发者工具"声线。视觉主力是排行榜表格：序号、技能名、8 周活动 sparkline、安装量——纯数据驱动，零营销插画。客户/合作 logo 一律灰度处理，hover 时恢复品牌色。
 
