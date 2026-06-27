@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+:root {
+  --font-geist: 'Geist', system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, monospace;
+}
+
+html { background-color: #000000; color-scheme: dark; }
+body {
+  background-color: #000000;
+  color: #ededed;
+  font-family: var(--font-geist);
+  -webkit-font-smoothing: antialiased;
+}
