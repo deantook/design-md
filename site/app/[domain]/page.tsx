@@ -43,7 +43,6 @@ function DetailSide({ record, lang }: { record: DesignRecord; lang: Lang }) {
       </main>
     )
   }
-  const github = lang === 'zh' ? record.githubZh : record.githubEn
   return (
     <main className="mx-auto max-w-container px-container-py py-8">
       <Eyebrow>Site / {record.domain}</Eyebrow>
