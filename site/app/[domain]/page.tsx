@@ -35,7 +35,7 @@ function DetailSide({ record, lang }: { record: DesignRecord; lang: Lang }) {
   const side = lang === 'zh' ? record.zh : record.en
   if (!side.available) {
     return (
-      <main className="mx-auto max-w-container px-container-py py-8">
+      <main className="mx-auto max-w-container px-container-px py-8">
         <Eyebrow>Site / {record.domain}</Eyebrow>
         <p className="mt-8 font-mono text-sm text-muted-fg">
           No {lang === 'zh' ? 'Chinese' : 'English'} version available yet.
@@ -44,7 +44,7 @@ function DetailSide({ record, lang }: { record: DesignRecord; lang: Lang }) {
     )
   }
   return (
-    <main className="mx-auto max-w-container px-container-py py-8">
+    <main className="mx-auto max-w-container px-container-px py-8">
       <Eyebrow>Site / {record.domain}</Eyebrow>
       <h1 className="mt-4 font-sans text-2xl font-semibold text-foreground">{record.domain}</h1>
       <p className="mt-3 max-w-[640px] font-sans text-base leading-6 text-foreground">{side.description}</p>

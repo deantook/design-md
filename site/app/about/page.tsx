@@ -3,7 +3,7 @@ import { config } from '@/config'
 export default function AboutPage() {
   const repoUrl = `https://github.com/${config.repoOwner}/${config.repoName}`
   return (
-    <main className="mx-auto max-w-container px-container-py py-8">
+    <main className="mx-auto max-w-container px-container-px py-8">
       <span className="font-mono text-sm font-medium uppercase text-foreground">About</span>
       <h1 className="mt-4 font-sans text-2xl font-semibold text-foreground">design.md directory</h1>
       <p className="mt-4 max-w-[640px] font-sans text-base leading-6 text-muted-fg">
